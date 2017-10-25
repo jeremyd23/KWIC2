@@ -1,5 +1,8 @@
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class Input
@@ -10,15 +13,27 @@ public class Input
     {
         try
         {
-            input = new Scanner(new FileInputStream(fileName + ".txt"));
+            this.input = new Scanner(new FileInputStream(fileName + ".txt"));
         }
         catch(FileNotFoundException e)
         {
             System.out.println("File not found");
         }
-        finally
+    }
+
+    public ArrayList<LinkedList> addFileText()
+    {
+        ArrayList<LinkedList> textFile = new ArrayList<>();
+
+        while(input.hasNextLine())
         {
-           input.close();
+            String line = input.nextLine();
+            String delims = "[ ]+";
+
+            LinkedList<String> lineWords =  new LinkedList(Arrays.asList(line.replace(",", "").split(delims)));
+            textFile.add(lineWords);
         }
+
+        return textFile;
     }
 }
