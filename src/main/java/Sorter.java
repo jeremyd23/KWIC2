@@ -5,10 +5,6 @@ import java.util.LinkedList;
 
 public class Sorter
 {
-    public Sorter()
-    {
-
-    }
 
     public ArrayList<LinkedList> sort(ArrayList<LinkedList> fileText)
     {

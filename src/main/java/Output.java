@@ -16,9 +16,10 @@ public class Output
 
             for(LinkedList line : fileText)
             {
-                //output.println(line);
+                output.println(line);
                 System.out.println(line);
             }
+            output.close();
         }
         catch(FileNotFoundException e)
         {

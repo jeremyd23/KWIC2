@@ -19,8 +19,7 @@ public class KWICMain
         System.out.println("Please enter a file name (poem OR long)");
         String fileName = console.nextLine();
 
-        Input file = new Input(fileName);
-        fileText = file.addFileText();
+        fileText = new Input(fileName).addFileText();
     }
 
     private static void circularShift()
